@@ -25,7 +25,7 @@ run() {
   local mem
   local cmd
   local image
-  image="docker.io/blairy/terraformer:latest"
+  image="terraformer:latest"
   cpus="${1}"
   mem="${2}"
   echo Running Terraformer with "${mem}" memory and "${cpus}" cpus. 
