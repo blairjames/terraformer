@@ -2,7 +2,7 @@
 Terraform IaC runner
 
 ## How to use
-- Git clone this repository
+- Git clone the repository https://github.com/blairjames/terraformer.git
 - Add your .tf files to the "terraform_configs" directory
 - Run the "./build.sh" script
 - Run the container using the "./run.sh" script
