@@ -19,8 +19,6 @@ RUN \
 # Initialise Terraform
 COPY \
    ./terraform_configs/ ./terraform/
-RUN \
-  terraform -chdir=/terraform init
 
 # Add command aliases
 RUN \
@@ -33,5 +31,13 @@ RUN \
 
 HEALTHCHECK --interval=15s --timeout=5s --start-period=5s --retries=2 \
   CMD /bin/bash -c 'terraform -version || exit 1' 
+
+RUN \
+  terraform -chdir=/terraform init 
+
+#RUN \  
+#  adduser terra;echo 'terra:terra' | chpasswd 
+
+#USER terra
 
 ENTRYPOINT ["/bin/bash"]
