@@ -22,8 +22,6 @@ COPY \
 
 #Create non-privileged user, permit terraform commands
 RUN \  
-  ls /terraform && \
-  terraform -chdir='/terraform' init && \
   echo $(head -n1 /etc/passwd) > /etc/passwd && \
   echo $(head -n1 /etc/shadow) > /etc/shadow && \
   adduser terra;echo 'terra:terra' | chpasswd && \
@@ -41,8 +39,7 @@ RUN \
   echo "alias s='apk search'" >> $HOME/.bashrc && \
   echo "alias in='apk add'" >> $HOME/.bashrc && \
   echo "alias terraform='sudo terraform -chdir=/terraform'" >> $HOME/.bashrc && \
-  echo "alias tf='sudo terraform -chdir=/terraform'" >> $HOME/.bashrc && \
-  sudo terraform -chdir='/terraform' init
+  echo "alias tf='sudo terraform -chdir=/terraform'" >> $HOME/.bashrc 
 
 HEALTHCHECK --interval=15s --timeout=5s --start-period=5s --retries=2 \
   CMD /bin/bash -c 'terraform -version || exit 1' 
