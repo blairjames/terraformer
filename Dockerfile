@@ -14,30 +14,36 @@ RUN \
     shadow \    
     terraform \
     sudo && \
-  mkdir terraform 
+  mkdir terraform
 
-# Initialise Terraform
+# Copy terraform files to container
 COPY \
    ./terraform_configs/ ./terraform/
 
-# Add command aliases
+#Create non-privileged user, permit terraform commands
+RUN \  
+  echo $(head -n1 /etc/passwd) > /etc/passwd && \
+  echo $(head -n1 /etc/shadow) > /etc/shadow && \
+  adduser terra;echo 'terra:terra' | chpasswd && \
+  echo "terra ALL=(ALL) NOPASSWD:/usr/bin/terraform" > /etc/sudoers.d/terra
+
+# Change to non-privileged user 'terra'
+USER terra
+
+# Add command aliases and initialise terraform
 RUN \
   touch $HOME/.bashrc && chmod 755 $HOME/.bashrc && \
   echo "alias l='ls -larth'" >> $HOME/.bashrc && \
   echo "alias c='clear'" >> $HOME/.bashrc && \
   echo "alias up='apk update && apk upgrade'" >> $HOME/.bashrc && \
   echo "alias s='apk search'" >> $HOME/.bashrc && \
-  echo "alias in='apk add'" >> $HOME/.bashrc
+  echo "alias in='apk add'" >> $HOME/.bashrc && \
+  echo "alias terraform='sudo terraform -chdir=/terraform'" >> $HOME/.bashrc && \
+  echo "alias tf='sudo terraform -chdir=/terraform'" >> $HOME/.bashrc && \
+  sudo terraform -chdir='/terraform' init
 
 HEALTHCHECK --interval=15s --timeout=5s --start-period=5s --retries=2 \
   CMD /bin/bash -c 'terraform -version || exit 1' 
 
-RUN \
-  terraform -chdir=/terraform init 
-
-#RUN \  
-#  adduser terra;echo 'terra:terra' | chpasswd 
-
-#USER terra
-
+WORKDIR /terraform
 ENTRYPOINT ["/bin/bash"]
