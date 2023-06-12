@@ -14,3 +14,5 @@
 - The "terraform" and "tf" commands are aliased to be invoked seamlessly via sudo (it is not necessary to prefix Terraform commands with sudo)
 
 ![image](https://github.com/blairjames/terraformer/assets/32350627/f4de448f-f4cf-4643-849a-956b590f6643)
+
+https://github.com/blairjames/terraformer/usage.webm
