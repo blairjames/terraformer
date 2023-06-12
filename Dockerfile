@@ -22,6 +22,8 @@ COPY \
 
 #Create non-privileged user, permit terraform commands
 RUN \  
+  ls /terraform && \
+  terraform -chdir='/terraform' init && \
   echo $(head -n1 /etc/passwd) > /etc/passwd && \
   echo $(head -n1 /etc/shadow) > /etc/shadow && \
   adduser terra;echo 'terra:terra' | chpasswd && \
