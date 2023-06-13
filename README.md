@@ -17,4 +17,4 @@ If you experience any issues please email me: [docker@blairjames.com](mailto:doc
  
 ![image](https://github.com/blairjames/terraformer/assets/32350627/f4de448f-f4cf-4643-849a-956b590f6643)
 
-https://github.com/blairjames/terraformer/usage.webm
+[![Terraformer How-to Demonstration Video](https://github-production-user-asset-6210df.s3.amazonaws.com/32350627/245361003-78a32599-dc87-469e-b5aa-669bf26cf1c9.png)](https://www.youtube.com/watch?v=_0BYwJkc088 "Terraformer How-to Demonstration Video")
