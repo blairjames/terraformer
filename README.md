@@ -4,6 +4,8 @@
 
 </br>
 
+![image](https://github.com/blairjames/terraformer/assets/32350627/cca74709-6605-41ac-8358-10904bfa8fdf)
+
 ## How to use
 - Git clone the repository [github.com/blairjames/terraformer.git](https://github.com/blairjames/terraformer.git)
 - Add your Terraform configuration files to the "terraform_configs" directory
@@ -14,7 +16,5 @@
 - The "terraform" and "tf" commands are aliased to be invoked seamlessly via sudo (it is not necessary to prefix Terraform commands with sudo)
 - The "terra" user has been granted explicit permission to execute Terraform commands only. Other actions requiring escalated privileges are outside the user's scope and therfore not permitted.
 If you experience any issues please email me: [docker@blairjames.com](mailto:docker@blairjames.com)
- 
-![image](https://github.com/blairjames/terraformer/assets/32350627/f4de448f-f4cf-4643-849a-956b590f6643)
 
-[![Terraformer How-to Demonstration Video](https://github-production-user-asset-6210df.s3.amazonaws.com/32350627/245361003-78a32599-dc87-469e-b5aa-669bf26cf1c9.png)](https://www.youtube.com/watch?v=_0BYwJkc088 "Terraformer How-to Demonstration Video")
+[![Terraformer How-to Demonstration Video](https://github-production-user-asset-6210df.s3.amazonaws.com/32350627/245363606-b459eef2-1d96-4c03-a96b-4a5d6d9eec62.png)](https://www.youtube.com/watch?v=_0BYwJkc088 "Terraformer How-to Demonstration Video")
