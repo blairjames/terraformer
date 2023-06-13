@@ -20,7 +20,7 @@ RUN \
 COPY \
    ./terraform_configs/ ./terraform/
 
-#Create non-privileged user, permit terraform commands
+# Create non-privileged user, permit terraform commands
 RUN \  
   echo $(head -n1 /etc/passwd) > /etc/passwd && \
   echo $(head -n1 /etc/shadow) > /etc/shadow && \
