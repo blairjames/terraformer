@@ -14,7 +14,7 @@
 - Inside the image your Terraform configuration files are located in the "/terraform" directory
 - The container executes commands as the "terra" user who is permitted to run Terraform commands requiring elevated privilege via sudo
 - The "terraform" and "tf" commands are aliased to be invoked seamlessly via sudo (it is not necessary to prefix Terraform commands with sudo)
-- The "terra" user has been granted explicit permission to execute Terraform commands only. Other actions requiring escalated privileges are outside the user's scope and therfore not permitted.
+- The "terra" user has been granted explicit permission to execute Terraform commands only. Other actions requiring escalated privileges are outside the user's scope and therefore not permitted.
 If you experience any issues please email me: [docker@blairjames.com](mailto:docker@blairjames.com)
 
 [![Terraformer How-to Demonstration Video](https://github-production-user-asset-6210df.s3.amazonaws.com/32350627/245363606-b459eef2-1d96-4c03-a96b-4a5d6d9eec62.png)](https://www.youtube.com/watch?v=_0BYwJkc088 "Terraformer How-to Demonstration Video")
