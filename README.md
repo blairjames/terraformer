@@ -7,7 +7,7 @@
 ![image](https://github.com/blairjames/terraformer/assets/32350627/cca74709-6605-41ac-8358-10904bfa8fdf)
 
 ## How to use
-- Clone the repository: github.com/blairjames/terraformer.git
+- Clone the repository: [github.com/blairjames/terraformer.git](https://github.com/blairjames/terraformer.git)
 - Add your Terraform configuration files to the "terraform_configs" directory.
 - Execute the "./build.sh" script to create the image locally.
 - Execute the "./run.sh" script to start the container.
